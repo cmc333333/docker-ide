@@ -24,4 +24,4 @@ export PATH="$VIRTUAL_ENV/bin:$PATH"
 unset PYTHON_HOME
 
 # start vim
-su user -c "vim -i NONE $@"
+su user -c "vim -i /home/history/viminfo $@"

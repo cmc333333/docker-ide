@@ -3,6 +3,7 @@
 
 
 docker run --rm -it \
+  -v ide-history:/home/history \
   -v "$HOME/.ssh":/home/.ssh -v "$PWD":/workdir/ \
   -e USER_ID=`id -u $USER` \
   cmc333333/ide:python2 $@
