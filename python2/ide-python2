@@ -1,0 +1,8 @@
+#!/bin/sh
+# Shell script which wraps the docker command
+
+
+docker run --rm -it \
+  -v "$HOME/.ssh":/home/.ssh -v "$PWD":/workdir/ \
+  -e USER_ID=`id -u $USER` \
+  cmc333333/ide:python2 $@
