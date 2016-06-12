@@ -1,2 +1,2 @@
-# vim-docker
-Vim image with all of my configurations
+# docker-ide
+Docker image centered around vim
