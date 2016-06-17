@@ -17,6 +17,10 @@ RUN apk add --update build-base ncurses-dev python-dev \
     && apk del --purge build-base ncurses-dev python-dev \
     && cd /tmp && rm -rf /var/cache/apk/* /tmp/vim
 
+# Libxml
+RUN apk add --update libxslt libxml2-dev libxslt-dev gcc python-dev musl-dev \
+    && rm -rf /var/cache/apk/*
+
 # Directory setup
 RUN mkdir -p /home/.vim/autoload /home/.vim/bundle /workdir
 
@@ -46,7 +50,8 @@ COPY ["entry.sh", "/home/entry.sh"]
 
 ENV TERM='xterm-256color' \
     PAGER='less' \
-    EDITOR='vim'
+    EDITOR='vim' \
+    PYTHONUNBUFFERED='1'
 
 WORKDIR /workdir/
 ENTRYPOINT ["/home/entry.sh"]

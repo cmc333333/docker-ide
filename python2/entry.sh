@@ -6,7 +6,7 @@ adduser -h /home -D -H -u $USER_ID user
 chown user:user -R /home
 
 # Warn if empty directory
-if [ $# -eq 0 ] && [ ! `ls` ]
+if [ $# -eq 0 ] && [ ! "$(ls)" ]
 then
   echo 'Directory is empty. Did you mount one via -v "$PWD":/workdir/ ?'
 fi

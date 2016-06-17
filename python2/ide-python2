@@ -1,9 +1,16 @@
 #!/bin/sh
 # Shell script which wraps the docker command
 
+if  [ $DOCKER_MACHINE_NAME ]
+then
+  export USER_ID=1000
+else
+  export USER_ID=`id -u $USER`
+fi
+
 
 docker run --rm -it \
   -v ide-history:/home/history \
   -v "$HOME/.ssh":/home/.ssh -v "$PWD":/workdir/ \
-  -e USER_ID=`id -u $USER` \
+  -e USER_ID=$USER_ID \
   cmc333333/ide:python2 $@
