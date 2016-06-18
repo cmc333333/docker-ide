@@ -6,7 +6,7 @@ RUN apk add --update git openssh python \
     && rm -rf /var/cache/apk/*
 
 # Compile Vim with relevant options
-RUN apk add --update build-base ncurses-dev python-dev \
+RUN apk add --update build-base ncurses-dev python-dev diffutils \
     && cd /tmp \
     && git clone --depth=1 https://github.com/vim/vim.git \
     && cd vim \
