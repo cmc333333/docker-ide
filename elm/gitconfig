@@ -1,0 +1,5 @@
+[user]
+	email = cm.lubinski@gmail.com
+	name = CM Lubinski
+[core]
+	excludesfile = /home/.gitignore
