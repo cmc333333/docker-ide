@@ -8,6 +8,10 @@ RUN apt-get update \
 
 # Elm
 RUN npm install -g elm elm-oracle elm-test
+RUN curl -Lo /tmp/elm-format.tgz https://github.com/avh4/elm-format/releases/download/0.4.0-alpha/elm-format-0.17-0.4.0-alpha-linux-x64.tgz \
+    && cd /usr/bin \
+    && tar -xvzf /tmp/elm-format.tgz \
+    && rm /tmp/elm-format.tgz
 
 # Directory setup
 RUN mkdir -p /home/.vim/autoload /home/.vim/bundle /workdir
