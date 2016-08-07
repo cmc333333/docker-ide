@@ -46,7 +46,7 @@ RUN apk add --update libc-dev \
     && cd / \
     && rm -rf /var/cache/apk/* /tmp/*
 
-ENV PATH $PATH:/workdir/.nimble/bin
+ENV PATH $PATH:/workdir/.nimble-lib/bin
 
 # Directory setup
 RUN mkdir -p /home/.vim/autoload /home/.vim/bundle /workdir

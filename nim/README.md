@@ -1,2 +1,2 @@
 # Nim IDE
-Creates and manages a nimble directory (`.nimble`).
+Creates and manages a nimble directory (`.nimble-lib`).

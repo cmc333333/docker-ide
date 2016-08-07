@@ -12,13 +12,13 @@ then
 fi
 
 # create nimble
-if [ ! -d .nimble ]
+if [ ! -d .nimble-lib ]
 then
   echo 'No nimble directory. Creating one.'
-  su user -c "cp -r /etc/nimble .nimble"
+  su user -c "cp -r /etc/nimble .nimble-lib"
 fi
 
-ln -s /workdir/.nimble /home/.nimble
+ln -s /workdir/.nimble-lib /home/.nimble
 
 # start vim
 su user -c "vim -i /home/history/viminfo $@"
