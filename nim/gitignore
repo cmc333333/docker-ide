@@ -1,2 +1,3 @@
 .nimble-lib
 nimcache
+*.sw?
