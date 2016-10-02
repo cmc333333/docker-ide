@@ -25,7 +25,7 @@ RUN apk add --update libxslt libxml2-dev libxslt-dev gcc python3-dev musl-dev \
 RUN mkdir -p /home/.vim/autoload /home/.vim/bundle /workdir
 
 # Plugins
-RUN apk add --update curl py-pip \
+RUN apk add --update curl \
     && curl -Lo /home/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim \
     && cd /home/.vim/bundle \
     && git clone --depth=1 https://github.com/bling/vim-airline.git \
@@ -39,8 +39,8 @@ RUN apk add --update curl py-pip \
     && git clone --depth=1 https://github.com/tpope/vim-repeat.git \
     && git clone --depth=1 https://github.com/tpope/vim-speeddating.git \
     && git clone --depth=1 https://github.com/tpope/vim-surround.git \
-    && pip install jedi virtualenv \
-    && apk del --purge curl py-pip \
+    && pip3 install jedi virtualenv \
+    && apk del --purge curl \
     && rm -rf /var/cache/apk/*
 
 COPY ["vimrc", "/home/.vimrc"]
