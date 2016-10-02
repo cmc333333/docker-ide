@@ -2,11 +2,11 @@ FROM alpine:3.4
 MAINTAINER CM Lubinski <cm.lubinski@gmail.com>
 
 # Common packages
-RUN apk add --update git openssh python \
+RUN apk add --update git openssh python2 \
     && rm -rf /var/cache/apk/*
 
 # Compile Vim with relevant options
-RUN apk add --update build-base ncurses-dev python-dev diffutils \
+RUN apk add --update build-base ncurses-dev python2-dev diffutils \
     && cd /tmp \
     && git clone --depth=1 https://github.com/vim/vim.git \
     && cd vim \
@@ -14,11 +14,11 @@ RUN apk add --update build-base ncurses-dev python-dev diffutils \
                    --disable-netbeans --with-compiledby="CM Lubinski" \
                    --enable-pythoninterp=dynamic \
     && make install \
-    && apk del --purge build-base ncurses-dev python-dev \
+    && apk del --purge build-base ncurses-dev python2-dev \
     && cd /tmp && rm -rf /var/cache/apk/* /tmp/vim
 
 # Libxml
-RUN apk add --update libxslt libxml2-dev libxslt-dev gcc python-dev musl-dev \
+RUN apk add --update libxslt libxml2-dev libxslt-dev gcc python2-dev musl-dev \
     && rm -rf /var/cache/apk/*
 
 # Directory setup
