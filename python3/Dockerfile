@@ -12,7 +12,7 @@ RUN apk add --update build-base ncurses-dev python3-dev diffutils \
     && cd vim \
     && ./configure --with-features=normal --enable-multibyte \
                    --disable-netbeans --with-compiledby="CM Lubinski" \
-                   --enable-pythoninterp=dynamic \
+                   --enable-python3interp=dynamic \
     && make install \
     && apk del --purge build-base ncurses-dev python3-dev \
     && cd /tmp && rm -rf /var/cache/apk/* /tmp/vim
