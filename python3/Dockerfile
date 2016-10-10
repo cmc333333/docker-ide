@@ -1,32 +1,27 @@
-FROM alpine:3.4
+FROM python:3.5
 MAINTAINER CM Lubinski <cm.lubinski@gmail.com>
 
 # Common packages
-RUN apk add --update git openssh python3 \
-    && rm -rf /var/cache/apk/*
+RUN apt-get update \
+    && apt-get -y install git openssh-client \
+    && rm -rf /var/lib/apt/lists/*
 
 # Compile Vim with relevant options
-RUN apk add --update build-base ncurses-dev python3-dev diffutils \
-    && cd /tmp \
+RUN cd /tmp \
     && git clone --depth=1 https://github.com/vim/vim.git \
     && cd vim \
     && ./configure --with-features=normal --enable-multibyte \
                    --disable-netbeans --with-compiledby="CM Lubinski" \
                    --enable-python3interp=dynamic \
     && make install \
-    && apk del --purge build-base ncurses-dev python3-dev \
-    && cd /tmp && rm -rf /var/cache/apk/* /tmp/vim
+    && cd /tmp && rm -rf /tmp/vim
 
-# Libxml
-RUN apk add --update libxslt libxml2-dev libxslt-dev gcc python3-dev musl-dev \
-    && rm -rf /var/cache/apk/*
 
 # Directory setup
 RUN mkdir -p /home/.vim/autoload /home/.vim/bundle /workdir
 
 # Plugins
-RUN apk add --update curl \
-    && curl -Lo /home/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim \
+RUN curl -Lo /home/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim \
     && cd /home/.vim/bundle \
     && git clone --depth=1 https://github.com/bling/vim-airline.git \
     && git clone --depth=1 https://github.com/davidhalter/jedi-vim.git \
@@ -39,14 +34,9 @@ RUN apk add --update curl \
     && git clone --depth=1 https://github.com/tpope/vim-repeat.git \
     && git clone --depth=1 https://github.com/tpope/vim-speeddating.git \
     && git clone --depth=1 https://github.com/tpope/vim-surround.git \
-    && pip3 install jedi virtualenv \
-    && apk del --purge curl \
-    && rm -rf /var/cache/apk/*
+    && pip install jedi flake8
 
-COPY ["vimrc", "/home/.vimrc"]
-COPY ["gitconfig", "/home/.gitconfig"]
-COPY ["gitignore", "/home/.gitignore"]
-COPY ["entry.sh", "/home/entry.sh"]
+COPY [".vimrc", ".gitconfig", ".gitignore", "entry.sh", "vimwrapper.sh", "/home/"]
 
 ENV TERM='xterm-256color' \
     PAGER='less' \
