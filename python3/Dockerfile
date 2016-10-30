@@ -34,7 +34,7 @@ RUN curl -Lo /home/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim \
     && git clone --depth=1 https://github.com/tpope/vim-repeat.git \
     && git clone --depth=1 https://github.com/tpope/vim-speeddating.git \
     && git clone --depth=1 https://github.com/tpope/vim-surround.git \
-    && pip install flake8
+    && pip install flake8 radon
 
 COPY [".vimrc", ".gitconfig", ".gitignore", "entry.sh", "vimwrapper.sh", "/home/"]
 
