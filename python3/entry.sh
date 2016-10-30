@@ -5,4 +5,4 @@
 useradd --home /home -M --uid $USER_ID user
 chown user:user -R /home
 
-su user -c "/home/vimwrapper.sh $@"
+sudo -u user /home/vimwrapper.sh $@
