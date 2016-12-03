@@ -38,10 +38,5 @@ RUN curl -Lo /home/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim \
 
 COPY [".vimrc", ".gitconfig", ".gitignore", "entry.sh", "vimwrapper.sh", "/home/"]
 
-ENV TERM='xterm-256color' \
-    PAGER='less' \
-    EDITOR='vim' \
-    PYTHONUNBUFFERED='1'
-
 WORKDIR /workdir/
 ENTRYPOINT ["/home/entry.sh"]

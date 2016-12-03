@@ -16,6 +16,11 @@ then
   pip install jedi
 fi
 
+# other env variables
+export TERM='xterm-256color'
+export PAGER='less'
+export EDITOR='vim'
+export PYTHONUNBUFFERED='1'
+
 # start vim
 vim -i /home/history/viminfo $@
-
