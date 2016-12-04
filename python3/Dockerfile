@@ -3,7 +3,7 @@ MAINTAINER CM Lubinski <cm.lubinski@gmail.com>
 
 # Common packages
 RUN apt-get update \
-    && apt-get -y install git openssh-client sudo \
+    && apt-get -y install git openssh-client sudo less \
     && rm -rf /var/lib/apt/lists/*
 
 # Compile Vim with relevant options
