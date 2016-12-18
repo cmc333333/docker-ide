@@ -2,8 +2,8 @@ set nocompatible
 set backspace=indent,eol,start
 syntax on
 set wm=2
-set sts=4
-set sw=4
+set sts=2
+set sw=2
 set tw=78
 set expandtab
 set autoindent
@@ -50,3 +50,5 @@ augroup CursorLine
   au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
   au WinLeave * setlocal nocursorline
 augroup END
+
+let g:syntastic_javascript_checkers = ['eslint']
