@@ -40,3 +40,4 @@ COPY [".vimrc", ".gitconfig", ".gitignore", "entry.sh", "vimwrapper.sh", "/home/
 
 WORKDIR /workdir/
 ENTRYPOINT ["/home/entry.sh"]
+EXPOSE 8000
