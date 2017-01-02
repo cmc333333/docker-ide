@@ -19,4 +19,5 @@ docker run --rm -it \
   -v "$HOME/.ssh":/home/.ssh -v "$PWD":/workdir/ \
   -e USER_ID=$USER_ID \
   $LINKS \
+  -P \
   cmc333333/ide:node $@

@@ -32,3 +32,4 @@ ENV TERM='xterm-256color' \
 
 WORKDIR /workdir/
 ENTRYPOINT ["/home/entry.sh"]
+EXPORT 8000
