@@ -20,9 +20,9 @@ RUN apk add --update build-base ncurses-dev python-dev diffutils \
 # Compile Nim
 RUN apk add --update gcc musl-dev tar gzip \
     && cd /tmp \
-    && curl -Lo /tmp/nim.tgz https://github.com/nim-lang/Nim/archive/v0.14.2.tar.gz \
+    && curl -Lo /tmp/nim.tgz https://github.com/nim-lang/Nim/archive/v0.16.0.tar.gz \
     && tar -xvzf nim.tgz \
-    && mv Nim-0.14.2 /etc/nim \
+    && mv Nim-0.16.0 /etc/nim \
     && cd /etc/nim \
     && git clone --depth=1 https://github.com/nim-lang/csources.git \
     && cd csources && sh build.sh \
