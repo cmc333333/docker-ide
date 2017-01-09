@@ -21,7 +21,7 @@ RUN curl -Lo /home/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim \
     && cd /home/.vim/bundle \
     && git clone --depth=1 https://github.com/bling/vim-airline.git \
     && git clone --depth=1 https://github.com/ervandew/supertab.git \
-    && git clone --depth=1 https://github.com/edsono/vim-matchit.git \
+    && git clone --depth=1 https://github.com/jwhitley/vim-matchit.git \
     && git clone --depth=1 https://github.com/scrooloose/nerdtree.git \
     && git clone --depth=1 https://github.com/scrooloose/syntastic.git \
     && git clone --depth=1 https://github.com/tpope/vim-commentary.git \
