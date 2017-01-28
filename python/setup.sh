@@ -33,11 +33,9 @@ apk add --update libxslt libxml2-dev libxslt-dev
 
 # Fetch pyenv
 git clone https://github.com/yyuu/pyenv.git /pyenv --depth=1
-git clone https://github.com/yyuu/pyenv-virtualenv.git /pyenv/plugins/pyenv-virtualenv --depth=1
 # Prep for project-specific version installation
 ln -s /workdir/.ide/pyenv/versions/ /pyenv/versions
 ln -s /workdir/.ide/pyenv/shims/ /pyenv/shims
-ln -s /workdir/.ide/pyenv/cache/ /pyenv/cache
 
 # Build Vim
 apk add --update python2-dev python2 py2-pip  # for +python

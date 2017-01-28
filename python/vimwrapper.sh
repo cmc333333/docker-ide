@@ -19,11 +19,10 @@ then
   pyenv install --list | grep -v [a-zA-Z]
   read -p 'What version of Python should we use? ' pyversion
   pyenv install $pyversion
-  pyenv virtualenv $pyversion ide-env
+  echo $pyversion >> "/workdir/.ide/.python-version"
 fi
 
 eval "$(pyenv init -)"
-pyenv activate ide-env
 
 # other env variables
 export TERM='xterm-256color'
