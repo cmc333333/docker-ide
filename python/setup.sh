@@ -38,18 +38,18 @@ ln -s /workdir/.ide/pyenv/versions/ /pyenv/versions
 ln -s /workdir/.ide/pyenv/shims/ /pyenv/shims
 
 # Build Vim
-apk add --update python2-dev python2 py2-pip  # for +python
+apk add --update python2-dev py2-pip python3-dev  # for +python, +python3
 cd /tmp
 git clone --depth=1 https://github.com/vim/vim.git
 cd vim
 ./configure --with-features=huge --enable-multibyte \
             --disable-netbeans --with-compiledby="CM Lubinski" \
-            --enable-pythoninterp
+            --enable-pythoninterp --enable-python3interp
 make install
 cd /
 rm -rf /tmp/vim
-pip install jedi
-apk del --purge python2-dev
+pip2 install jedi
+pip3 install jedi
 
 # Directory setup
 mkdir -p /home/.vim/autoload /home/.vim/bundle /workdir
@@ -68,6 +68,7 @@ git clone --depth=1 https://github.com/tpope/vim-fugitive.git
 git clone --depth=1 https://github.com/tpope/vim-repeat.git
 git clone --depth=1 https://github.com/tpope/vim-speeddating.git
 git clone --depth=1 https://github.com/tpope/vim-surround.git
+git clone --depth=1 https://github.com/lambdalisue/vim-pyenv.git
 
 # Cleanup
 rm -rf /var/cache/apk/*
