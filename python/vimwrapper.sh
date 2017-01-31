@@ -11,8 +11,8 @@ fi
 
 export PYENV_DIR="/workdir/.ide/"
 
-# create IDE directory
-if [ ! -d .ide ]
+# create Python info
+if [ ! -f .ide/.python-version ]
 then
   mkdir -p .ide/pyenv/versions/ .ide/pyenv/shims/ .ide/pyenv/cache/
   echo "Available versions:"
