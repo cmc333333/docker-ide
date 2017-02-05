@@ -23,7 +23,6 @@ filetype plugin on
 set foldmethod=marker
 set foldmarker={,}
 set foldlevel=1
-set encoding=utf-8
 
 let TList_Process_File_Always = 1
 noremap <F4> :TlistToggle<CR>
@@ -51,4 +50,5 @@ augroup CursorLine
   au WinLeave * setlocal nocursorline
 augroup END
 
-let g:syntastic_javascript_checkers = ['eslint']
+let g:jedi#popup_on_dot = 0
+let g:jedi#show_call_signatures = "2"

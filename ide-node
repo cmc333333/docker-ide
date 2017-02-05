@@ -16,6 +16,8 @@ done
 
 docker run --rm -it \
   -v ide-history:/home/history \
+  -v nvm-aliases:/nvm/alias \
+  -v nvm-versions:/nvm/versions \
   -v "$HOME/.ssh":/home/.ssh -v "$PWD":/workdir/ \
   -e USER_ID=$USER_ID \
   $LINKS \
