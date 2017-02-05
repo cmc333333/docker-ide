@@ -5,6 +5,7 @@ apk add --update bash \
                  curl \
                  diffutils \
                  git \
+                 grep \
                  openssh \
                  patch \
                  sudo
