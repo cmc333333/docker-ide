@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export LANG=en_US.UTF-8
+export PATH=./node_modules/.bin/:$PATH
 
 # Warn if empty directory
 if [ $# -eq 0 ] && [ ! "$(ls)" ]
