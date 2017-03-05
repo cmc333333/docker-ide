@@ -8,6 +8,6 @@ RUN /root/setup.sh
 COPY [".vimrc", ".gitconfig", ".gitignore", "entry.sh", "vimwrapper.sh", "/home/"]
 
 VOLUME ["/home/history", "/home/.ssh", "/workdir", "/nvm/alias", "/nvm/versions"]
-ENTRYPOINT /home/entry.sh
+ENTRYPOINT ["/home/entry.sh"]
 WORKDIR /workdir/
 EXPOSE 8000
