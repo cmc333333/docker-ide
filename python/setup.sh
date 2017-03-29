@@ -20,6 +20,7 @@ apk add --update build-base \
                  libffi-dev \
                  linux-headers \
                  ncurses-dev \
+                 openssl \
                  openssl-dev \
                  patch \
                  paxmark \
