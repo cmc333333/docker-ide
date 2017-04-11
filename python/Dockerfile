@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:3.4
 MAINTAINER CM Lubinski <cm.lubinski@gmail.com>
 
 COPY ["setup.sh", "/root/"]

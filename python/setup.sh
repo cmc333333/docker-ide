@@ -32,6 +32,8 @@ apk add --update build-base \
 
 # Libxml
 apk add --update libxslt libxml2-dev libxslt-dev
+# Postgres
+apk add --update postgresql-dev
 
 # Fetch pyenv
 git clone https://github.com/yyuu/pyenv.git /pyenv --depth=1
@@ -40,7 +42,7 @@ ln -s /workdir/.ide/pyenv/versions/ /pyenv/versions
 ln -s /workdir/.ide/pyenv/shims/ /pyenv/shims
 
 # Build Vim
-apk add --update python2-dev py2-pip python3-dev  # for +python, +python3
+apk add --update python-dev py-pip python3-dev  # for +python, +python3
 cd /tmp
 git clone --depth=1 https://github.com/vim/vim.git
 cd vim
