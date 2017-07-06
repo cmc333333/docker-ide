@@ -53,7 +53,7 @@ make install
 cd /
 rm -rf /tmp/vim
 pip2 install jedi
-pip3 install jedi
+pip3 install jedi tox tox-pyenv
 
 # Directory setup
 mkdir -p /home/.vim/autoload /home/.vim/bundle /workdir
