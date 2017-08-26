@@ -66,13 +66,16 @@ git clone --depth=1 https://github.com/davidhalter/jedi-vim.git
 git clone --depth=1 https://github.com/ervandew/supertab.git
 git clone --depth=1 https://github.com/jwhitley/vim-matchit.git
 git clone --depth=1 https://github.com/scrooloose/nerdtree.git
-git clone --depth=1 https://github.com/scrooloose/syntastic.git
 git clone --depth=1 https://github.com/tpope/vim-commentary.git
 git clone --depth=1 https://github.com/tpope/vim-fugitive.git
 git clone --depth=1 https://github.com/tpope/vim-repeat.git
 git clone --depth=1 https://github.com/tpope/vim-speeddating.git
 git clone --depth=1 https://github.com/tpope/vim-surround.git
 git clone --depth=1 https://github.com/lambdalisue/vim-pyenv.git
+
+mkdir -p /home/.vim/pack/git-plugins/start
+cd /home/.vim/pack/git-plugins/start
+git clone https://github.com/w0rp/ale.git ale
 
 # Cleanup
 rm -rf /var/cache/apk/*

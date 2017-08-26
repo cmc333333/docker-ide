@@ -38,6 +38,7 @@ let g:airline_left_sep = '▖'
 let g:airline_right_sep = '▅'
 let g:airline_theme='dark'
 let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#ale#enabled = 1
 
 hi SpellBad cterm=undercurl ctermbg=None ctermfg=LightRed
 hi CursorLine cterm=none ctermbg=234
@@ -64,3 +65,6 @@ if jedi#init_python()
     autocmd User vim-pyenv-deactivate-post call s:jedi_auto_force_py_version()
   augroup END
 endif
+
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
