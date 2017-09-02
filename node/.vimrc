@@ -50,4 +50,4 @@ augroup CursorLine
   au WinLeave * setlocal nocursorline
 augroup END
 
-let g:syntastic_javascript_checkers = ['eslint']
+let g:ale_lint_on_text_changed = 'never'
