@@ -1,11 +1,12 @@
 #!/bin/sh
+set -e
 
 # Core packages
-apk add --update bash \
+apk add --update ack \
+                 bash \
                  curl \
                  diffutils \
                  git \
-                 grep \
                  openssh \
                  patch \
                  sudo
