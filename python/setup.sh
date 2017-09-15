@@ -2,14 +2,14 @@
 set -e
 
 # Core packages
-apk add --update ack \
-                 bash \
+apk add --update bash \
                  curl \
                  diffutils \
                  git \
                  openssh \
                  patch \
-                 sudo
+                 sudo \
+                 the_silver_searcher
 
 # Python Dev Packages
 apk add --update build-base \
@@ -66,13 +66,14 @@ git clone --depth=1 https://github.com/bling/vim-airline.git
 git clone --depth=1 https://github.com/davidhalter/jedi-vim.git
 git clone --depth=1 https://github.com/ervandew/supertab.git
 git clone --depth=1 https://github.com/jwhitley/vim-matchit.git
+git clone --depth=1 https://github.com/lambdalisue/vim-pyenv.git
+git clone --depth=1 https://github.com/mileszs/ack.vim.git
 git clone --depth=1 https://github.com/scrooloose/nerdtree.git
 git clone --depth=1 https://github.com/tpope/vim-commentary.git
 git clone --depth=1 https://github.com/tpope/vim-fugitive.git
 git clone --depth=1 https://github.com/tpope/vim-repeat.git
 git clone --depth=1 https://github.com/tpope/vim-speeddating.git
 git clone --depth=1 https://github.com/tpope/vim-surround.git
-git clone --depth=1 https://github.com/lambdalisue/vim-pyenv.git
 
 mkdir -p /home/.vim/pack/git-plugins/start
 cd /home/.vim/pack/git-plugins/start

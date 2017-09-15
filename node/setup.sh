@@ -4,11 +4,11 @@ set -e
 
 # Core packages
 apt-get update
-apt-get install -y ack-grep \
-                   curl \
+apt-get install -y curl \
                    git \
                    locales \
                    patch \
+                   silversearcher-ag \
                    software-properties-common \
                    sudo
 
@@ -41,13 +41,14 @@ cd /home/.vim/bundle
 git clone --depth=1 https://github.com/bling/vim-airline.git
 git clone --depth=1 https://github.com/ervandew/supertab.git
 git clone --depth=1 https://github.com/jwhitley/vim-matchit.git
+git clone --depth=1 https://github.com/mileszs/ack.vim.git
 git clone --depth=1 https://github.com/scrooloose/nerdtree.git
+git clone --depth=1 https://github.com/ternjs/tern_for_vim.git
 git clone --depth=1 https://github.com/tpope/vim-commentary.git
 git clone --depth=1 https://github.com/tpope/vim-fugitive.git
 git clone --depth=1 https://github.com/tpope/vim-repeat.git
 git clone --depth=1 https://github.com/tpope/vim-speeddating.git
 git clone --depth=1 https://github.com/tpope/vim-surround.git
-git clone --depth=1 https://github.com/ternjs/tern_for_vim.git
 
 # Tern needs npm for installation. We'll use the nvm version later
 apt-get install -y npm
