@@ -1,0 +1,11 @@
+--sort-files
+
+--ignore-dir=node_modules/
+--ignore-dir=.ide/
+--ignore-dir=.next/
+--ignore-dir=lcov-report/
+--ignore-file=lcov.info
+--ignore-dir=jest_0/
+
+--type-add=css=scss
+--type-add=js=.jsx

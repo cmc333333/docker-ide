@@ -2,14 +2,14 @@
 set -e
 
 # Core packages
-apk add --update bash \
+apk add --update ack \
+                 bash \
                  curl \
                  diffutils \
                  git \
                  openssh \
                  patch \
-                 sudo \
-                 the_silver_searcher
+                 sudo
 
 # Python Dev Packages
 apk add --update build-base \

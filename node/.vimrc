@@ -42,8 +42,6 @@ let g:airline#extensions#whitespace#enabled = 0
 hi SpellBad cterm=undercurl ctermbg=None ctermfg=LightRed
 hi CursorLine cterm=none ctermbg=234
 
-let g:ackprg = 'ag --vimgrep'
-
 autocmd FileType * if &omnifunc != '' | call SuperTabChain(&omnifunc, "<c-p>") | call SuperTabSetDefaultCompletionType("<c-x><c-u>") | endif
 
 augroup CursorLine

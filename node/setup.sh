@@ -4,11 +4,11 @@ set -e
 
 # Core packages
 apt-get update
-apt-get install -y curl \
+apt-get install -y ack-grep \
+                   curl \
                    git \
                    locales \
                    patch \
-                   silversearcher-ag \
                    software-properties-common \
                    sudo
 
