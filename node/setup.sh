@@ -24,8 +24,8 @@ update-locale
 
 # Install nvm
 mkdir /nvm
-curl https://raw.githubusercontent.com/creationix/nvm/v0.33.0/nvm.sh > /nvm/nvm.sh
-curl https://raw.githubusercontent.com/creationix/nvm/v0.33.0/nvm-exec > /nvm/nvm-exec
+curl https://raw.githubusercontent.com/creationix/nvm/v0.33.8/nvm.sh > /nvm/nvm.sh
+curl https://raw.githubusercontent.com/creationix/nvm/v0.33.8/nvm-exec > /nvm/nvm-exec
 chmod a+x /nvm/*
 
 # Directory setup
@@ -42,6 +42,8 @@ git clone --depth=1 https://github.com/bling/vim-airline.git
 git clone --depth=1 https://github.com/ervandew/supertab.git
 git clone --depth=1 https://github.com/jwhitley/vim-matchit.git
 git clone --depth=1 https://github.com/mileszs/ack.vim.git
+git clone --depth=1 https://github.com/mxw/vim-jsx.git
+git clone --depth=1 https://github.com/pangloss/vim-javascript.git
 git clone --depth=1 https://github.com/scrooloose/nerdtree.git
 git clone --depth=1 https://github.com/ternjs/tern_for_vim.git
 git clone --depth=1 https://github.com/tpope/vim-commentary.git

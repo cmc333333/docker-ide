@@ -51,3 +51,4 @@ augroup CursorLine
 augroup END
 
 let g:ale_lint_on_text_changed = 'never'
+let g:jsx_ext_required = 0
