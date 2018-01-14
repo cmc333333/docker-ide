@@ -44,6 +44,7 @@ git clone --depth=1 https://github.com/jwhitley/vim-matchit.git
 git clone --depth=1 https://github.com/mileszs/ack.vim.git
 git clone --depth=1 https://github.com/mxw/vim-jsx.git
 git clone --depth=1 https://github.com/pangloss/vim-javascript.git
+git clone --depth=1 https://github.com/plasticboy/vim-markdown.git
 git clone --depth=1 https://github.com/scrooloose/nerdtree.git
 git clone --depth=1 https://github.com/ternjs/tern_for_vim.git
 git clone --depth=1 https://github.com/tpope/vim-commentary.git

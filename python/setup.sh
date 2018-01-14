@@ -68,6 +68,7 @@ git clone --depth=1 https://github.com/ervandew/supertab.git
 git clone --depth=1 https://github.com/jwhitley/vim-matchit.git
 git clone --depth=1 https://github.com/lambdalisue/vim-pyenv.git
 git clone --depth=1 https://github.com/mileszs/ack.vim.git
+git clone --depth=1 https://github.com/plasticboy/vim-markdown.git
 git clone --depth=1 https://github.com/scrooloose/nerdtree.git
 git clone --depth=1 https://github.com/tpope/vim-commentary.git
 git clone --depth=1 https://github.com/tpope/vim-fugitive.git
