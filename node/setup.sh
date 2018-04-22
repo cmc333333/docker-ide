@@ -24,8 +24,8 @@ update-locale
 
 # Install nvm
 mkdir /nvm
-curl https://raw.githubusercontent.com/creationix/nvm/v0.33.8/nvm.sh > /nvm/nvm.sh
-curl https://raw.githubusercontent.com/creationix/nvm/v0.33.8/nvm-exec > /nvm/nvm-exec
+curl https://raw.githubusercontent.com/creationix/nvm/v0.33.9/nvm.sh > /nvm/nvm.sh
+curl https://raw.githubusercontent.com/creationix/nvm/v0.33.9/nvm-exec > /nvm/nvm-exec
 chmod a+x /nvm/*
 
 # Directory setup

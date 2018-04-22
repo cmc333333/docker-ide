@@ -11,7 +11,7 @@ fi
 
 # Load NVM
 export NVM_DIR="/nvm"
-. "$NVM_DIR/nvm.sh"
+. "$NVM_DIR/nvm.sh" --no-use
 
 # create Node info
 if [ ! -f .nvmrc ]
@@ -26,7 +26,7 @@ then
   fi
 fi
 
-export nodeversion=`(cat .nvmrc 2> /dev/null) || cat .ide/.node-version`
+nodeversion=`(cat .nvmrc 2> /dev/null) || cat .ide/.node-version`
 
 (nvm ls $nodeversion > /dev/null) || (nvm install $nodeversion > /dev/null)
 
