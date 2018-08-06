@@ -2,6 +2,7 @@
 export PYENV_ROOT="/pyenv"
 export PATH="/pyenv/bin:$PATH"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+export PIPENV_VENV_IN_PROJECT=1
 
 # Warn if empty directory
 if [ $# -eq 0 ] && [ ! "$(ls)" ]
