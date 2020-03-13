@@ -1,0 +1,14 @@
+#!/bin/sh
+# Shell script which wraps the docker command
+
+export USER_ID=`id -u $USER`
+
+docker run --rm -it \
+  -v ide-history:/home/history \
+  -v pyenv-versions:/pyenv/versions \
+  -v ide-$(echo $PWD | md5sum | cut -d ' ' -f1):/ide \
+  -v "$HOME/.ssh":/home/.ssh -v "$PWD":/workdir/ \
+  -e USER_ID=$USER_ID \
+  --name ide-unified \
+  -P \
+  cmc333333/ide:unified $@
