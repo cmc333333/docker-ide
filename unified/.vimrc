@@ -1,5 +1,6 @@
 filetype indent on
 filetype plugin on 
+let mapleader = "\<Space>"
 set autoindent
 set expandtab
 set foldlevelstart=99
@@ -34,3 +35,4 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_completion_enabled = 1
 let g:ale_lint_delay = 1000
 let g:ale_set_balloons = 1
+nmap <nowait> <Leader>1 <Plug>(ale_fix)
