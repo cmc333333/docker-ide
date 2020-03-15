@@ -1,14 +1,27 @@
 #!/bin/sh
 # Shell script which wraps the docker command
 
-export USER_ID=`id -u $USER`
+USER_ID=$(id -u $USER)
+DIR_HASH=$(echo $PWD | md5sum | cut -d ' ' -f1)
 
-docker run --rm -it \
-  -v ide-history:/home/history \
-  -v pyenv-versions:/pyenv/versions \
-  -v ide-$(echo $PWD | md5sum | cut -d ' ' -f1):/ide \
-  -v "$HOME/.ssh":/home/.ssh -v "$PWD":/workdir/ \
-  -e USER_ID=$USER_ID \
-  --name ide-unified \
-  -P \
-  cmc333333/ide:unified $@
+docker ps -a | grep $DIR_HASH > /dev/null
+if [ $? -ne 0 ]; then
+  docker create \
+    --volume pyenv-versions:/pyenv/versions \
+    --volume "$HOME/.ssh":/home/.ssh \
+    --volume "$PWD":/workdir/ \
+    --name ide-$DIR_HASH \
+    cmc333333/ide:unified \
+    sleep 365d > /dev/null
+fi
+
+docker start ide-$DIR_HASH > /dev/null
+
+docker exec \
+  --env USER_ID=$USER_ID \
+  --interactive \
+  --tty \
+  ide-$DIR_HASH \
+  /home/entrypoint.sh $@
+
+docker kill ide-$DIR_HASH > /dev/null

@@ -1,4 +1,4 @@
-export ACK_OPTIONS=--sort-files --ignore-dir=node_modules/ --ignore-dir=.next/ --ignore-dir=lcov-report/ --ignore-file=yyis:lcov.info --ignore-dir=jest_0/ --type-add=css=scss --type-add=js=.jsx
+export ACK_OPTIONS="--sort-files --ignore-dir=node_modules/ --ignore-dir=.next/ --ignore-dir=lcov-report/ --ignore-file=yyis:lcov.info --ignore-dir=jest_0/ --type-add=css=scss --type-add=js=.jsx"
 export EDITOR=vim
 export LANG=en_US.UTF-8
 export MYPY_CACHE_DIR=/home/.mypy_cache/

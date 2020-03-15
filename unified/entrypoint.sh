@@ -31,3 +31,4 @@ fi
 
 chown user:user -R /ide
 su -l user -c "cd /workdir; pipenv run vim $@"
+deluser user &> /dev/null

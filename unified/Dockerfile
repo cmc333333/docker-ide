@@ -29,15 +29,14 @@ RUN git clone --depth=1 https://github.com/tpope/vim-speeddating.git /usr/share/
 RUN git clone --depth=1 https://github.com/tpope/vim-surround.git /usr/share/vim/vimfiles/pack/plugins/start/surround
 RUN git clone --depth=1 https://github.com/w0rp/ale.git /usr/share/vim/vimfiles/pack/plugins/start/ale
 RUN mkdir -p /usr/share/vim/vimfiles/pack/plugins/start/custom
-COPY ["vimrc", "/etc/vim/vimrc"]
 COPY ["ftplugin/", "/usr/share/vim/vimfiles/pack/plugins/start/custom/ftplugin/"]
 RUN vim -es -c "packloadall" -c "helptags ALL" -c "q"
 
 COPY ["gitconfig", "gitignore", "profile", "/etc/"]
 
-RUN chmod a+w /home
-COPY ["entrypoint.sh", "/home/"]
+RUN echo "user ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/user
+COPY ["entrypoint.sh", ".vimrc", "/home/"]
+RUN chmod a+w /home /home/.vimrc
 
-VOLUME ["/home/history", "/home/.ssh", "/ide", "/pyenv/versions", "/workdir", "/pyenv/versions"]
-ENTRYPOINT ["/home/entrypoint.sh"]
+VOLUME ["/home/.ssh", "/ide", "/workdir", "/pyenv/versions"]
 WORKDIR /workdir/
