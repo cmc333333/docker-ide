@@ -35,7 +35,7 @@ RUN vim -es -c "packloadall" -c "helptags ALL" -c "q"
 COPY ["gitconfig", "gitignore", "profile", "/etc/"]
 
 RUN echo "user ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/user
-COPY ["entrypoint.sh", ".vimrc", "/home/"]
+COPY ["entrypoint.sh", ".ackrc", ".vimrc", "/home/"]
 RUN chmod a+w /home /home/.vimrc
 
 VOLUME ["/home/.ssh", "/ide", "/workdir", "/pyenv/versions"]

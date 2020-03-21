@@ -11,7 +11,6 @@ set smartcase
 set softtabstop=2
 set spell
 set title
-set viminfofile=/home/history/viminfo
 set visualbell
 
 hi SpellBad cterm=undercurl ctermbg=None ctermfg=LightRed
