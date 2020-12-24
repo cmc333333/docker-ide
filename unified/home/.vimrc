@@ -10,6 +10,7 @@ set shiftwidth=2
 set smartcase
 set softtabstop=2
 set spell
+set textwidth=80
 set title
 set visualbell
 

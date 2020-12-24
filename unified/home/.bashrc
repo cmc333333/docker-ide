@@ -1,10 +1,11 @@
 export EDITOR=vim
+export IDE_CACHE_DIR=/var/cache/ide/
 export LANG=en_US.UTF-8
 export MYPY_CACHE_DIR=/home/.mypy_cache/
 export PAGER=less
-export PATH=/pyenv/bin:$PATH
+export PATH=$PATH:/usr/src/pyenv/bin
 export PIPENV_DONT_LOAD_ENV=true
-export PYENV_ROOT=/pyenv
+export PIPENV_PYTHON=/usr/src/pyenv/shims/python
+export PYENV_ROOT=/usr/src/pyenv
 export PYTHONUNBUFFERED=1
 export TERM=xterm-256color
-export WORKON_HOME=/ide/venvs

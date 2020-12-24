@@ -7,9 +7,9 @@ DIR_HASH=$(echo $PWD | md5sum | cut -d ' ' -f1)
 docker ps -a | grep $DIR_HASH > /dev/null
 if [ $? -ne 0 ]; then
   docker create \
-    --volume pyenv-versions:/pyenv/versions \
+    --volume ide-cache:/var/cache/ide \
     --volume "$HOME/.ssh":/home/.ssh \
-    --volume "$PWD":/workdir/ \
+    --volume "$PWD":/usr/src/workspace/ \
     --name ide-$DIR_HASH \
     cmc333333/ide:unified \
     sleep 365d > /dev/null
@@ -22,6 +22,6 @@ docker exec \
   --interactive \
   --tty \
   ide-$DIR_HASH \
-  /home/entrypoint.sh $@
+  entrypoint.sh $@
 
 docker kill ide-$DIR_HASH > /dev/null
