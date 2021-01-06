@@ -49,5 +49,5 @@ done
 
 # vim should run within the pipenv shell
 if ! grep pipenv /home/.bashrc > /dev/null; then
-  sed -i 's/vim=/pipenv run vim/g' /usr/bin/vim-wrapper.sh
+  sudo sed -i 's/vim=/pipenv run vim/g' /usr/bin/vim-wrapper.sh
 fi
