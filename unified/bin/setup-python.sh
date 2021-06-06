@@ -9,6 +9,7 @@ if [ ! -d /usr/src/pyenv ]; then
   mkdir -p ${IDE_CACHE_DIR}pyenv-versions/
   ln -s ${IDE_CACHE_DIR}pyenv-versions /usr/src/pyenv/versions
   echo 'eval "$(pyenv init -)"' >> /home/.bashrc
+  echo 'eval "$(pyenv init --path)"' >> /home/.bashrc
   source /home/.bashrc
 fi
 
@@ -22,7 +23,9 @@ fi
 
 # install that version
 if ! pyenv versions 2> /dev/null; then
-  pyenv install
+  version_file=$(pyenv version-file)
+  version=$(cat $version_file)
+  pyenv install $version
   pyenv rehash
   pip install --upgrade pip
 fi
@@ -49,5 +52,9 @@ done
 
 # vim should run within the pipenv shell
 if ! grep pipenv /home/.bashrc > /dev/null; then
-  sudo sed -i 's/vim=/pipenv run vim/g' /usr/bin/vim-wrapper.sh
+  # Can't use -i due to limited permissions
+  sed 's/vim=/pipenv run vim/g' /usr/bin/vim-wrapper.sh > /tmp/vim-wrapper.sh
+  cp /tmp/vim-wrapper.sh /usr/bin/vim-wrapper.sh
+  rm /tmp/vim-wrapper.sh
+  echo "You must restart the IDE to use pipenv"
 fi
