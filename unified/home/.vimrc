@@ -38,3 +38,4 @@ let g:ale_completion_enabled = 1
 let g:ale_lint_delay = 1000
 let g:ale_set_balloons = 1
 nmap <nowait> <Leader>2 <Plug>(ale_fix)
+nmap <nowait> <Leader>[ <Plug>(ale_go_to_definition_in_split)
