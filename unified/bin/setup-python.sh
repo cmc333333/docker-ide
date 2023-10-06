@@ -41,7 +41,7 @@ if [ ! -f Pipfile ] && [ ! -f ../Pipfile ]; then
   source /home/.bashrc
 fi
 
-desired_deps=( black flake8 isort python-language-server mypy )
+desired_deps=( black flake8 isort python-lsp-server mypy )
 current_deps=$(pipenv run pip freeze)
 for desired in "${desired_deps[@]}"
 do
