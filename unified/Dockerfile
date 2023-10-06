@@ -52,11 +52,7 @@ RUN \
   git clone --depth=1 https://github.com/tpope/vim-speeddating.git /usr/share/vim/vimfiles/pack/plugins/start/speeddating &&\
   git clone --depth=1 https://github.com/tpope/vim-surround.git /usr/share/vim/vimfiles/pack/plugins/start/surround &&\
   git clone --depth=1 https://github.com/w0rp/ale.git /usr/share/vim/vimfiles/pack/plugins/start/ale &&\
-  wget https://vim.sourceforge.io/scripts/download_script.php?src_id=19574 -O tags.zip &&\
-  mkdir tags &&\
-  unzip tags.zip -d tags &&\
-  mv tags /usr/share/vim/vimfiles/pack/plugins/start/tags &&\
-  rm tags.zip
+  git clone --depth=1 https://github.com/yegappan/taglist.git /usr/share/vim/vimfiles/pack/plugins/start/taglist
 
 RUN mkdir -p /usr/share/vim/vimfiles/pack/plugins/start/custom
 COPY ["ftplugin/", "/usr/share/vim/vimfiles/pack/plugins/start/custom/ftplugin/"]
