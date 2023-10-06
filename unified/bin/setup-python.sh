@@ -51,9 +51,9 @@ do
 done
 
 # vim should run within the pipenv shell
-if ! grep pipenv /home/.bashrc > /dev/null; then
+if ! grep pipenv /usr/bin/vim-wrapper.sh > /dev/null; then
   # Can't use -i due to limited permissions
-  sed 's/vim=/pipenv run vim/g' /usr/bin/vim-wrapper.sh > /tmp/vim-wrapper.sh
+  sed 's/vim/pipenv run vim/g' /usr/bin/vim-wrapper.sh > /tmp/vim-wrapper.sh
   cp /tmp/vim-wrapper.sh /usr/bin/vim-wrapper.sh
   rm /tmp/vim-wrapper.sh
   echo "You must restart the IDE to use pipenv"
